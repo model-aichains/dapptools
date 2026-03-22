@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: radial-gradient(circle at top, #020617, #000);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Inter", system-ui, sans-serif;
+        }
+
+        /* Glassmorphism */
+        .swal2-popup {
+            background: rgba(15, 23, 42, 0.65) !important;
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+            color: #e5e7eb;
+        }
+
+        .swal2-title {
+            color: #f87171 !important;
+        }
+
+        .swal2-html-container {
+            color: #cbd5f5 !important;
+        }
+
+        .swal2-confirm {
+            background: linear-gradient(135deg, #dc2626, #991b1b) !important;
+            border-radius: 12px !important;
+            padding: 10px 28px;
+            font-weight: 600;
+            box-shadow: 0 8px 20px rgba(220, 38, 38, 0.4);
+        }
+
+        .swal2-icon.swal2-error {
+            border-color: #ef4444 !important;
+            color: #ef4444 !important;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    window.onload = () => {
+        Swal.fire({
+            icon: 'error',
+            title: 'Access Blocked',
+            text: 'Bot detect another wallet, please try again',
+            confirmButtonText: 'Return Home',
+            allowOutsideClick: false,
+            allowEscapeKey: false
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = 'https://dappexplorers.web.app';
+            }
+        });
+    };
+</script>
+
+</body>
+</html>
